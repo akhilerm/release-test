@@ -29,14 +29,14 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Test retag and pushing single destination image
-        uses: akhilerm/tag-push-action@main
+        uses: akhilerm/tag-push-action@experiment
         with:
           src: docker.io/openebs/linux-utils:ci
           dst: |
             ghcr.io/akhilerm/linux-utils:${{ env.TAG }}
       
       - name: Test retag and pushing multiple destination image
-        uses: akhilerm/tag-push-action@main
+        uses: akhilerm/tag-push-action@experiment
         with:
           src: docker.io/openebs/linux-utils:ci
           dst: |
@@ -45,7 +45,7 @@ jobs:
             ghcr.io/akhilerm/linux-utils:ci
       
       - name: Test retag and pushing image
-        uses: akhilerm/tag-push-action@main
+        uses: akhilerm/tag-push-action@experiment
         with:
           src: ghcr.io/openebs/linux-utils:ci
           dst: |
