@@ -10,7 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Setup bats
-        uses: bats-core/bats-action@v2.1.0
+        uses: bats-core/bats-action@2.1.0
         with:
           bats-version: 1.9.0
           support-install: false
