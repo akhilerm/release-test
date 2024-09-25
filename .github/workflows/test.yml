@@ -11,7 +11,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Install required packages
         run: |
-          echo {{ runner.os }}
-          echo {{ runner.arch }}
-          echo {{ runner.platform }}
-          echo {{ runner.osversion }}
+          echo ${{ runner.os }}
+          echo ${{ runner.arch }}
+          echo ${{ runner.platform }}
+          echo ${{ runner.osversion }}
