@@ -5,13 +5,15 @@ on: ['push']
 jobs:
   test1:
     name: Test push from docker hub to ghcr
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Install required packages
-        run: |
-          echo ${{ runner.os }}
-          echo ${{ runner.arch }}
-          echo ${{ runner.platform }}
-          echo ${{ runner.osversion }}
+      - name: Setup bats
+        uses: bats-core/bats-action@v2.1.0
+        with:
+          bats-version: 1.9.0
+          support-install: false
+          assert-install: false
+          detik-install: false
+          file-install: false
